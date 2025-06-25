@@ -50,6 +50,8 @@ typedef struct KOPTContext {
     int read_max_width;
     int read_max_height;
     int writing_direction;
+	int black_hex;
+	int white_hex;
 
     double zoom;
     double margin;
