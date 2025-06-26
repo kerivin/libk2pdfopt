@@ -58,6 +58,7 @@ void k2pdfopt_settings_init_from_koptcontext(K2PDFOPT_SETTINGS *k2settings, KOPT
     k2settings->vertical_line_spacing = kctx->line_spacing;
     k2settings->text_wrap = kctx->wrap;
     k2settings->src_whitethresh = kctx->white;
+	k2settings->src_paintwhite = k2settings->src_whitethresh < 255 ? 1 : 0;
     k2settings->src_autostraighten = kctx->straighten;
     k2settings->preserve_indentation = kctx->indent;
     k2settings->max_columns = kctx->columns;
@@ -65,8 +66,6 @@ void k2pdfopt_settings_init_from_koptcontext(K2PDFOPT_SETTINGS *k2settings, KOPT
     k2settings->user_src_dpi = kctx->dev_dpi*kctx->quality;
     k2settings->defect_size_pts = kctx->defect_size;
     k2settings->dst_gamma = kctx->contrast;
-    sprintf(k2settings->dst_fgcolor,"%x",kctx->black_hex);
-    sprintf(k2settings->dst_bgcolor,"%x",kctx->white_hex);
 
     if (kctx->writing_direction == 0)
         k2settings->src_left_to_right = 1;
