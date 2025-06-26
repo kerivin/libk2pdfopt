@@ -59,7 +59,7 @@ void k2pdfopt_settings_init_from_koptcontext(K2PDFOPT_SETTINGS *k2settings, KOPT
     k2settings->text_wrap = kctx->wrap;
     k2settings->src_whitethresh = kctx->white;
 	k2settings->src_paintwhite = kctx->white < 255 ? 1 : 0;
-	k2settings->contrast_max = kctx->white < 255 && kctx->white > 0 ? (510. / kctx->white) : k2settings->contrast_max;
+	k2settings->contrast_max = kctx->white < 255 && kctx->white > 0 ? (5 * 255 / kctx->white) : k2settings->contrast_max;
     k2settings->src_autostraighten = kctx->straighten;
     k2settings->preserve_indentation = kctx->indent;
     k2settings->max_columns = kctx->columns;
