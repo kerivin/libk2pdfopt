@@ -58,7 +58,7 @@ void k2pdfopt_settings_init_from_koptcontext(K2PDFOPT_SETTINGS *k2settings, KOPT
     k2settings->vertical_line_spacing = kctx->line_spacing;
     k2settings->text_wrap = kctx->wrap;
     k2settings->src_whitethresh = kctx->white;
-	k2settings->src_paintwhite = k2settings->src_whitethresh < 255 ? 1 : 0;
+	k2settings->src_paintwhite = 1;
     k2settings->src_autostraighten = kctx->straighten;
     k2settings->preserve_indentation = kctx->indent;
     k2settings->max_columns = kctx->columns;
